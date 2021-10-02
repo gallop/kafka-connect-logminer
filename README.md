@@ -111,9 +111,6 @@ public void put(Collection<SinkRecord> records)
 
 ### 2.1 要点介绍
 
-代码结构如下：
-![kafka-connect-logminer-03](/images/2021/10/kafka-connect-logminer-03.png)
-
 1、程序的入口类是：JdbcSinkConnector.java   
 2、数据处理的主要逻辑入口： JdbcSinkTask.java  
 在这里主要是在put(Collection<SinkRecord> records)方法，消费处理kafka队列的消息（在kafka connect中的WorkerSourceTask类的iteration()方法，将持续的消费kafka消息，并调用put方法，将消息传递给JdbcSinkTask类做处理）。  
